@@ -1,0 +1,305 @@
+/* Estilos con paleta refinada gris grafito y modo oscuro/claro */
+
+:root {
+  --fondo-claro: #F5F5F7;
+  --texto-claro: #333333;
+  --fondo-oscuro: #121212;
+  --texto-oscuro: #E0E0E0;
+
+  --header-footer-claro: #2E2E2E;
+  --header-footer-oscuro: #1B1B1B;
+
+  --muted-claro: #E8E8E8;
+  --muted-oscuro: #333333;
+
+  --surface-claro: #FFFFFF;
+  --surface-oscuro: #1E1E1E;
+
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--fondo-claro);
+  color: var(--texto-claro);
+  margin: 0;
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 3rem;
+}
+
+.modo-oscuro {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-oscuro);
+}
+
+/* Botón modo oscuro */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--texto-claro);
+  z-index: 9999;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modo-oscuro .toggle-btn {
+  color: var(--texto-oscuro);
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--header-footer-claro);
+  color: #FFFFFF; /* gris oscuro definido para buen contraste */
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.modo-oscuro .site-header {
+  background-color: var(--header-footer-oscuro);
+  color: #FFFFFF; /* gris claro para destacar en fondo oscuro */
+}
+
+.site-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 0.3rem;  
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.50);
+}
+
+.site-header .subtitle {
+  font-weight: 300;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+/* Galería */
+.gallery {
+  max-width: 1100px;
+  margin: -45px auto 1.5rem;
+  padding: 0;
+  background-color: var(--surface-claro);
+  border-radius: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  text-align: center;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+}
+
+.modo-oscuro .gallery {
+  background-color: var(--surface-oscuro);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.gallery-placeholder {
+  color: #666;
+  padding: 2rem 1rem;
+  font-style: italic;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Main */
+main {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 2rem;
+  background-color: var(--surface-claro);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: background-color 0.4s ease;
+}
+
+.modo-oscuro main {
+  background-color: var(--surface-oscuro);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.intro p {
+  font-size: 1.05rem;
+  color: inherit;
+  margin-bottom: 1rem;
+}
+
+/* Features */
+.features h2 {
+  color: #222222; /* gris oscuro para modo claro */
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  transition: color 0.4s ease;
+}
+
+.modo-oscuro .features h2 {
+  color: #ddd; /* gris claro para modo oscuro */
+}
+
+.features ul {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+.features li {
+  background-color: var(--muted-claro);
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  margin-bottom: 0.55rem;
+  transition: background-color 0.4s ease;
+}
+
+.modo-oscuro .features li {
+  background-color: var(--muted-oscuro);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  margin: 2rem auto 3rem;
+  color: #FFFFFF; /* gris oscuro para destacar */
+  background-color: var(--header-footer-claro);
+  max-width: 1100px;
+  border-radius: var(--radius);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.modo-oscuro footer {
+  background-color: var(--header-footer-oscuro);
+  color: #ddd; /* gris claro para modo oscuro */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 2rem 1rem;
+  }
+  .site-header h1 {
+    font-size: 1.6rem;
+  }
+  .gallery {
+    margin: -30px 1rem 1rem;
+  }
+  .gallery-grid img {
+    height: 130px;
+  }
+  main {
+    margin: 1rem 1rem;
+    padding: 1rem;
+  }
+}
+
+.reserva {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.reserva h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.botones-reserva {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.botones-reserva a img {
+  width: 120px; /* ancho recomendado */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.botones-reserva a img:hover {
+  transform: scale(1.1);
+}
+
+/* Reglas añadidas: imagen de header difuminada y degradado de fusión.
+   No cambian tus reglas previas. Para usar, añade en tu HTML:
+   <header class="site-header" style="--header-bg: url('img/buenos-aires.jpg');"> ... </header>
+*/
+
+.site-header {
+  position: relative;
+  overflow: hidden;
+  /* color de fundido por defecto (se adapta a modo claro) */
+  --header-fade-color: var(--header-footer-claro);
+}
+
+/* cuando esté en modo oscuro, ajusta el color de fundido */
+.modo-oscuro .site-header {
+  --header-fade-color: var(--header-footer-oscuro);
+}
+
+/* capa de la imagen difuminada */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--header-bg);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  filter: blur(5px) brightness(0.6);
+  z-index: 0;
+  will-change: transform, filter;
+  pointer-events: none;
+}
+
+/* degradado que funde la imagen hacia la parte inferior del header */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--header-fade-color) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* asegurar que el contenido quede por encima del fondo */
+.site-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* reducir carga y blur en móviles */
+@media (max-width: 600px) {
+  .site-header::before { filter: blur(3px) brightness(0.9); transform: scale(1.02); }
+  .site-header::after  { height: 55%; }
+}
+

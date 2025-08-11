@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tu hogar en Villa Ballester - Alquiler Temporario</title>
+
+  <!-- Fuentes y iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS del sitio (mantener external) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Estilos mínimos locales usados en el documento (consolidado) -->
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* Modo oscuro toggle simple, no cambia si ya lo maneja styles.css */
+    .modo-oscuro {
+      background: #111;
+      color: #eee;
+    }
+
+    /* Botón de modo (ubicación mínima) */
+    .toggle-btn {
+      position: fixed;
+      right: 1rem;
+      top: 1rem;
+      z-index: 999;
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* Pequeña mejora de accesibilidad en footer enlaces */
+    footer a { text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-btn" id="modoBtn" aria-label="Cambiar modo claro/oscuro">🌙</button>
+
+<header class="site-header" style="--header-bg: url('img/buenos-aires.jpg');">
+  <h1>Tu hogar en Villa Ballester</h1>
+  <p class="subtitle">📍 Ubicado en el corazón de Villa Ballester, Buenos Aires</p>
+</header>
+
+
+  <section class="reserva">
+    <p>Disfrutá de un departamento moderno y luminoso, pensado para que te sientas como en casa. Ambiente privado y cuidado, perfecto para descansar, trabajar o explorar la ciudad.<br>Mirá las fotos y los detalles y reservá tu estadía con confianza en tus plataformas favoritas.</p>
+  </section>
+
+  <section class="reserva">
+    <h3>Reserva ahora</h3>
+    <div class="botones-reserva">
+      <a href="https://www.airbnb.com.ar/h/deptoballester" target="_blank" rel="noopener noreferrer">
+        <img src="img/airbnb.webp" alt="Reservar en Airbnb" />
+      </a>
+      <a href="https://www.booking.com/..." target="_blank" rel="noopener noreferrer">
+        <img src="img/booking.webp" alt="Reservar en Booking" />
+      </a>
+    </div>
+  </section>
+
+  <main>
+    <section class="features">
+      <h2><i class="fa-solid fa-door-closed" aria-hidden="true" style="margin-right:8px;"></i>Acceso</h2>
+      <ul>
+        <li>Entrega de llave en mano al momento de llegada previo pactar horario.<br>El acceso al departamento es por escaleras, segundo piso.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-bed" aria-hidden="true" style="margin-right:8px;"></i>Habitación</h2>
+      <div class="gallery" aria-hidden="true">
+        <img src="img/1.jpeg" alt="Dormitorio - vista 1">
+        <img src="img/2.jpeg" alt="Dormitorio - vista 2">
+        <img src="img/3.jpeg" alt="Dormitorio - vista 3">
+      </div>
+      <ul>
+        <li>Cama matrimonial cómoda con ropa de cama de calidad.<br>Ropero amplio y mesa de luz con velador.<br>Aire acondicionado y extensor con puertos USB.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-couch" aria-hidden="true" style="margin-right:8px;"></i>Sala de estar / comedor</h2>
+      <div class="gallery" aria-hidden="true">
+        <img src="img/6.jpeg" alt="Sala de estar / Comedor">
+        <img src="img/4.jpeg" alt="Mesa comedor">
+        <img src="img/5.jpeg" alt="Sofá cama">
+      </div>
+      <ul>
+        <li>Sofá cama, mesa ratona y mesa con 4 sillas.<br>Aire acondicionado y TV 43” con Roku TV y Claro.<br>Perchero para abrigos y bolsos.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-shower" aria-hidden="true" style="margin-right:8px;"></i>Baño</h2>
+      <div class="gallery" aria-hidden="true">
+        <img src="img/11.jpeg" alt="Baño">
+        <img src="img/12.jpeg" alt="Baño">
+      </div>
+      <ul>
+        <li>Bidet y ducha con excelente iluminación.<br>Espacio para toallas, dispenser con shampoo y acondicionador.<br>Papel higiénico incluido.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-kitchen-set" aria-hidden="true" style="margin-right:8px;"></i>Cocina</h2>
+      <div class="gallery" aria-hidden="true">
+        <img src="img/10.jpeg" alt="Sala de estar / Comedor">
+        <img src="img/8.jpeg" alt="Mesa comedor">
+        <img src="img/9.jpeg" alt="Sofá cama">
+      </div>
+      <ul>
+        <li>Horno con 4 hornallas, microondas y pava eléctrica.<br>Utensilios completos y vajilla variada.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-gift" aria-hidden="true" style="margin-right:8px;"></i>Extras incluidos</h2>
+      <ul>
+        <li>Azúcar, yerba, té, aceite, vinagre, sal, fósforos y encendedor.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer style="background:#222; color:#fff; padding:20px; text-align:center;">
+    <p>
+      <a href="mailto:ballesterdigital@gmail.com" style="color:#fff; margin-right: 10px;">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> ballesterdigital@gmail.com
+      </a> |
+      <a href="tel:+5491171001865" style="color:#fff; margin-left: 10px;">
+        <i class="fa-solid fa-phone" aria-hidden="true"></i> +54 9 11 7100 1865
+      </a>
+    </p>
+  </footer>
+
+<div style="text-align:center; padding:10px 0;">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer"
+     style="text-decoration:none; color:#e34f26; margin: 0 15px; font-size: 1.8em;" title="HTML5" aria-label="HTML5">
+    <i class="fa-brands fa-html5" aria-hidden="true"></i>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer"
+     style="text-decoration:none; color:#2965f1; margin: 0 15px; font-size: 1.8em;" title="CSS3" aria-label="CSS3">
+    <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+  </a>
+  <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer"
+     style="text-decoration:none; color:#f38020; margin: 0 15px; font-size: 1.8em;" title="Cloudflare" aria-label="Cloudflare">
+    <i class="fa-brands fa-cloudflare" aria-hidden="true"></i>
+  </a>
+<a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer" title="Booking" aria-label="Booking"
+   style="text-decoration:none; margin: 0 15px; position: relative; top: -7px;">
+  <img src="img/bookingcom.svg" alt="Booking" style="height: 1.8em; vertical-align: middle;">
+</a>
+
+  <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer"
+     style="text-decoration:none; color:#FF5A5F; margin: 0 15px; font-size: 1.8em;" title="Airbnb" aria-label="Airbnb">
+    <i class="fa-brands fa-airbnb" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+
+
+  <script>
+    const btn = document.getElementById('modoBtn');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('modo-oscuro');
+      btn.textContent = document.body.classList.contains('modo-oscuro') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
+
